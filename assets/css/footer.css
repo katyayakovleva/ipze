@@ -1,0 +1,62 @@
+footer{
+    font-family: 'Montserrat', sans-serif;
+    background: #47356C;
+    color: #E7ECEF;
+    padding: 97px 0 0;
+    font-size: 14px;
+    line-height: 1.3;
+}
+
+footer .container {
+    min-height: 300px;
+    position: relative;
+    padding-bottom: 130px;
+
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+footer .row{
+    opacity: 0.8;
+    margin-right: -15px;
+    margin-left: -15px;
+}
+footer .footer-menu-div{
+    padding-left: 35px;
+}
+
+footer .flogo {
+    position: absolute;
+    bottom: 0;
+    left: 15px;
+    display: block;
+    width: 226px;
+    height: 115px;
+    padding: 0;
+    margin: 0;
+    background: url(../images/apeps-inv.svg) bottom left no-repeat;
+}
+footer a, footer a:visited, footer h2 {
+    color: #E7ECEF;
+}
+
+footer .title {
+    font-size: 16px;
+    font-style: normal;
+}
+footer p {
+    margin: 0 0 10px;
+}
+
+
+footer .sys-in {
+    font-size: 12px;
+    margin-top: 33px;
+    margin-left: 5px;
+}
+
+.footer-menu li{
+    display: inline-block;
+    margin: 0 5px 10px;
+}
