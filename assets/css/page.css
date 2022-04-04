@@ -1,0 +1,111 @@
+/* Posts and pages
+--------------------------------------------- */
+.sticky {
+	display: block;
+}
+
+.post,
+.page {
+	margin: 0;
+}
+
+.updated:not(.published) {
+	display: none;
+}
+/* 
+.page-content,
+.entry-content,
+.entry-summary {
+	margin: 1.5em 0 0;
+} */
+
+.page-links {
+	clear: both;
+	margin: 0;
+}
+
+.content-article{
+	width: 100%;
+    max-width: 1200px;
+    padding: 0 0px;
+    margin: 0 auto;
+}
+/* .page-title{
+	margin-left: 120px;
+} */
+
+
+
+/* Page title large
+--------------------------------------------- */
+
+.large-title{
+    width: 100%;
+	position: relative;
+	
+}
+.large-title-img-blurcolor{
+	background-color: rgba(64, 112, 118, 0.46);
+	height: inherit;
+}
+.large-title-img {
+	background-position: center;
+  	background-size: cover;
+	height: 500px;
+	position: relative;
+}
+
+.large-title-title-div{
+	margin-top: -75px;
+	/* transform: translateY(0); */
+	display: flex;
+
+}
+.large-title-title{
+	background: #FFFFFF;
+	color:  #FFCF00;
+	padding: 20px 35px;
+	margin: 0;  
+}
+
+.large-title-breadcrumb{
+	color: white;
+	float: left;
+	padding-top: 55px;
+}
+.large-title-breadcrumb a{
+	color:white;
+}
+
+/*  Page title simple
+--------------------------------------------- */
+
+.simple-title{
+	width: 100%;
+    max-width: 1200px;
+    /* padding: 0 0px; */
+    margin: 0 auto;
+}
+.simple-title-title{
+	font-family: 'Jost';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 48px;
+	line-height: 69px;
+
+	color: #407076;
+}
+
+.simple-title hr {
+	color: #407076;
+	height: 2px;
+	opacity: 1;
+	/* margin: 0 5%; */
+}
+.simple-title-breadcrumb{
+	float: right;
+	color: #407076;
+}
+.simple-title-breadcrumb a{
+	color:#407076;
+}
