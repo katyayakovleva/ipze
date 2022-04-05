@@ -19,10 +19,13 @@
 				
 				<div class="parent">
 					
-					<div>
+					<div class="arrow-div">
 						<i class="arrow left"></i>
 					</div>
-					<?php get_breadcrumb(); ?>	
+					
+						<?php get_breadcrumb(); ?>	
+				
+					
 				</div>
 				<?php the_title( '<h1 class="title">', '</h1>' ); ?>
 					

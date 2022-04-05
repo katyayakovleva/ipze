@@ -10,13 +10,13 @@
 ?>
 
 
-<section class="simple-title container">
-	<div class="simple-title-breadcrumb"><?php get_breadcrumb(); ?></div>			
-	<div class="">
-		<?php the_title( '<h1 class="simple-title-title">', '</h1>' ); ?>
-		<hr class="simple-title-hr">
+<section class="simple-title">
+	<div class="parent">
+		<div class="arrow-div">
+			<i class="arrow left"></i>
+		</div>
+		<?php get_breadcrumb(); ?>	
 	</div>
-	
-		
+	<?php the_title( '<h1 class="title">', '</h1>' ); ?>
 </section><!-- .entry-header -->
 

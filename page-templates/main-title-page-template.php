@@ -12,7 +12,7 @@ get_header();
 
 ?>
 
-    <main id="main-page-tile " class="site-main container">
+    <main id="main-page-tile " class="container page">
 
         <?php
             get_template_part( 'template-parts/content', 'main-title' );
