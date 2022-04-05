@@ -12,12 +12,14 @@ get_header();
 
 ?>
 
-<div id="main-page-tile">
+    <main id="main-page-tile " class="site-main container">
 
-    <?php get_template_part( 'template-parts/content', 'main-title' );?>
-    <?php get_template_part( 'template-parts/content', 'page' );?>
+        <?php
+            get_template_part( 'template-parts/content', 'main-title' );
+            get_template_part( 'template-parts/content', 'page' );
+        ?>
 
-</div>
+    </main><!-- #main -->
 
 <?php
 get_footer();

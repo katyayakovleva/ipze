@@ -185,3 +185,91 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
 
+/**
+ * Generate breadcrumbs for showing a navigation page path
+ */
+// function get_breadcrumb() {
+//     echo '<a href="'.home_url().'" rel="nofollow">Головна </a>';
+//     if (is_category() || is_single()) {
+//         echo ' &nbsp;&nbsp;>&nbsp;&nbsp;  ';
+//         the_category(' &bull; ');
+//             if (is_single()) {
+//                 echo " &nbsp;&nbsp;>&nbsp;&nbsp;  ";
+//                 the_title();
+//             }
+	
+//     } 
+// 	elseif (is_page()) {
+
+		
+// 		$page = get_queried_object();
+// 		$parent_id = wp_get_post_parent_id($page);
+// 		$parents = array();
+		
+// 		while($parent_id){
+// 			$parents[] = $parent_id;
+// 			$page = get_post($parent_id);
+// 			$parent_id =  wp_get_post_parent_id($page);
+// 		}
+
+// 		$parents = array_reverse($parents);
+		
+// 		foreach($parents as $parent){
+// 			echo " &nbsp;&nbsp;>&nbsp;&nbsp; ";
+// 			echo '<a href="'.get_permalink($parent).'" rel="nofollow">';
+// 			echo get_the_title($parent);
+// 			echo '</a>';
+// 		}	
+// 		echo " &nbsp;&nbsp;>&nbsp;&nbsp;  ";
+//     	echo the_title();
+		
+//     } 
+	
+// 	// elseif (is_search()) {
+//     //     echo " > Search Results for... ";
+//     //     echo '"<em>';
+//     //     echo the_search_query();
+//     //     echo '</em>"';
+//     // }
+// }
+ /**
+ * Generate breadcrumbs for showing a navigation page path
+ */
+function get_breadcrumb() {
+    
+    if (is_category() || is_single()) {
+        echo ' &nbsp;&nbsp;<&nbsp;&nbsp;  ';
+        the_category(' &bull; ');
+            if (is_single()) {
+                echo " &nbsp;&nbsp;<&nbsp;&nbsp;  ";
+                the_title();
+            }
+	
+    } 
+	elseif (is_page()) {
+
+		
+		$page = get_queried_object();
+		$parent_id = wp_get_post_parent_id($page);
+
+		// echo " &nbsp;&nbsp;< &nbsp;&nbsp; ";
+		if($parent_id){
+			
+			echo '<a href="'.get_permalink($parent_id).'" rel="nofollow">';
+			echo get_the_title($parent_id);
+			echo '</a>';
+		}else{
+			echo '<a href="'.home_url().'" rel="nofollow">Головна</a>';
+		}
+		
+		
+		
+    } 
+	
+	// elseif (is_search()) {
+    //     echo " > Search Results for... ";
+    //     echo '"<em>';
+    //     echo the_search_query();
+    //     echo '</em>"';
+    // }
+}
