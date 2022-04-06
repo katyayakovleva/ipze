@@ -24,14 +24,17 @@
 <body <?php body_class(); ?>>
 <?php wp_body_open(); ?>
 <!--<div id="page" class="site">-->
-<!--	<a class="skip-link screen-reader-text" href="#primary">--><?php //esc_html_e( 'Skip to content', 'ipze' ); ?><!--</a>--> \
+<!--	<a class="skip-link screen-reader-text" href="#primary">--><?php //esc_html_e( 'Skip to content', 'ipze' ); ?><!--</a>-->
     <header>
         <div class="container">
             <div class="row logo-row">
                 <div class="col-sm-12">
-                    <a href="" class="logo">
-                        <img src="<?php echo get_template_directory_uri(); ?> . /assets/img/ipze_logo.svg" alt="ІПЗЕ">
-                    </a>
+                    <div>
+                        <a href="" class="logo">
+                            <img src="<?php echo get_template_directory_uri(); ?> . /assets/img/ipze_logo.svg" alt="ІПЗЕ">
+                        </a>
+                    </div>
+
                     <div class="lans">
                         <span class="lans-text">
                             <a href="" class="">Укр.</a>
@@ -41,6 +44,32 @@
                     </div>
                 </div>
             </div>
+            <div class="row menu-row">
+<!--                <div class="col-md-2 col-name">-->
+<!--                    <a href="" class="name-a">-->
+<!--                        <h1>                        КАФЕДРА ІПЗЕ ТЕФ<br> КПІ <span>ім.</span> І. СІКОРСЬКОГО                                            </h1>                    </a>-->
+<!--                </div>-->
+                <div class="col-md-11 menu_back">
+                    <nav id="site-navigation" class="head_menu">
+                        <!-- <button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'ipze' ); ?></button> -->
+                        <?php
+                        wp_nav_menu(
+                            array(
+                                'theme_location' => 'main-menu',
+                                'menu_id'        => 'primary-menu',
+                                'depth'          => '3'
+                            )
+                        );
+                        ?>
+                    </nav><!-- #site-navigation -->
+                </div>
+                <div class="col-md-1 soc-menu">
+                    <a href=""><i class="fa fa-search"></i> </a>
+                    <a href=""><i class="fab fa-telegram-plane"></i></a>
+                    <a href="" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                </div>
+            </div>
+        </div>
         </div>
     </header>
 
