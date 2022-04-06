@@ -42,6 +42,9 @@
                             <a href="" class="">Eng.</a>
                         </span>
                     </div>
+                    <div class="header_burger">
+                        <span></span>
+                    </div>
                 </div>
             </div>
             <div class="row menu-row">
@@ -51,6 +54,11 @@
 <!--                </div>-->
                 <div class="col-md-11 menu_back">
                     <nav id="site-navigation" class="head_menu">
+                        <span class="burger_lans lans-text">
+                            <a href="" class="">Укр.</a>
+                            <span class="stick">|</span>
+                            <a href="" class="">Eng.</a>
+                        </span>
                         <!-- <button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'ipze' ); ?></button> -->
                         <?php
                         wp_nav_menu(
@@ -61,6 +69,11 @@
                             )
                         );
                         ?>
+                        <div class="burger_soc-menu">
+                            <a href=""><i class="fa fa-search"></i> </a>
+                            <a href=""><i class="fab fa-telegram-plane"></i></a>
+                            <a href="" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                        </div>
                     </nav><!-- #site-navigation -->
                 </div>
                 <div class="col-md-1 soc-menu">

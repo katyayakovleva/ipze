@@ -5,6 +5,9 @@ header a{
 header a:hover{
     color: #47356C;
 }
+.scroll{
+    overflow: hidden;
+}
 *{
     text-decoration: none;
     text-decoration-line: none;
@@ -62,7 +65,7 @@ body {
  }
 .logo img{
     border: 0;
-    position: absolute;
+    /*position: absolute;*/
     left: 15px;
     top: 0;
     height: 113px;
@@ -192,6 +195,15 @@ body {
         transform: translateY(0px);
     }
 /*end_menu*/
+    .burger_lans{
+        display: none!important;
+    }
+    .burger_soc-menu{
+        display: none!important;
+    }
+    .logo img{
+        position: absolute;
+    }
 }
 @media (max-width: 1200px) {
     .menu_back{
@@ -221,6 +233,101 @@ body {
     .head_menu ul ul a {
         font-size: 12px;
         padding: 10px 15px;
+    }
+}
+
+@media(max-width: 1022px) {
+    .lans{
+        display: none!important;
+    }
+    .soc-menu{
+        display: none!important;
+    }
+    .container{
+        z-index: 1;
+    }
+    .head_menu{
+        position: absolute;
+        width: 100%;
+        background-color:  #FDD95B;
+        margin-top: -18px;
+        z-index: 4;
+        padding: 30px;
+        box-shadow: 2px -2px 4px rgba(179, 179, 179, 0.6);
+    }
+    .logo img{
+        width: 160px;
+        height: 80px;
+    }
+    .header_burger{
+        display: block;
+        position: relative;
+        width: 30px;
+        height: 18px;
+        float: right;
+        margin-top: -44px;
+        margin-left: 35px
+    }
+    .header_burger span{
+        position: absolute;
+        background-color: #47356C;
+        position: absolute;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        top: 8px;
+        border-radius: 5px;
+        transition: all 0.3s ease 0s;
+    }
+    .header_burger:before,
+    .header_burger:after{
+        content:'';
+        background-color: #47356C;
+        position: absolute;
+        width: 100%;
+        height: 2px;
+        border-radius: 5px;
+        left: 0;
+        transition: all 0.3s ease 0s;
+
+    }
+    .header_burger:before{
+        top: 0;
+    }
+    .header_burger:after{
+        bottom: 0;
+    }
+    .header_burger.active:before{
+        transform: rotate(45deg);
+        top: 8px;
+        margin: 0;
+    }
+    .header_burger.active:after{
+        transform: rotate(-45deg);
+        bottom: 8px;
+        margin: 0;
+    }
+    .header_burger.active span{
+        transform: scale(0);
+    }
+    .submenu{
+        display: none!important;
+    }
+    .head_burger_menu{
+        display: none;
+    }
+    .logo-row{
+        height: auto;
+        margin-bottom: 20px;
+    }
+    .burger_lans{
+        float: right;
+    }
+    .head_menu ul li {
+        margin-bottom: 25px;
+    }
+    .burger_soc-menu{
+        margin-left: 7px;
     }
 }
 @media (min-width: 992px) {
