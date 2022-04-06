@@ -2,16 +2,18 @@
 $(document).ready(function (){
     $('.head_menu ul ul, .head_menu ul ul ul').addClass('submenu');
     $('.head_menu ul').addClass('topmenu');
-    var windowWidth = $('body').innerWidth();
-    if(windowWidth < 1022){
+    var windowWidth = window.innerWidth;
+    console.log(windowWidth);
+    if(windowWidth <= 1020){
         $('.head_menu').addClass('head_burger_menu').css("display", "none");
     }
     else{
         $('.head_menu').removeClass('head_burger_menu').css("display", "block");
     }
     $(window).resize(function (){
-        windowWidth = $('body').innerWidth();
-        if(windowWidth < 1022){
+        windowWidth = window.innerWidth;
+        console.log(windowWidth);
+        if(windowWidth <= 1020){
             $('.head_menu').addClass('head_burger_menu').css("display", "none");
             $('.header_burger, .menu_back').removeClass('active');
             $('body').removeClass('scroll');
