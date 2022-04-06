@@ -1,5 +1,4 @@
 footer{
-    font-family: 'Montserrat', sans-serif;
     background: #47356C;
     color: #E7ECEF;
     padding: 97px 0 0;
@@ -21,7 +20,7 @@ footer .row{
     opacity: 0.8;
     margin-right: -15px;
     margin-left: -15px;
-    
+    display: flex;
 }
 
 footer .footer-menu-div{

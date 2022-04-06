@@ -13,7 +13,7 @@
 	<div class="container">
 
 		<div class="row">
-			<div class="col-sm-6 col-md-4">
+			<div class="">
 				<p>
 					<em class="title">Кафедра АПЕПС ТЕФ КПІ ім. І. Сікорського</em>
 				</p>
@@ -26,8 +26,8 @@
 					</span>
 				</p>
 			</div>
-			<div class="col-sm-4 col-md-7 footer-menu-div">
-				<nav id="site-navigation" class="footer-menu">
+			<div class="footer-menu-div">
+				<nav id="footer-navigation" class="footer-menu">
 					<?php
 						wp_nav_menu(
 							array(
@@ -42,8 +42,7 @@
 				</div>
 			</div>
 
-
-			<div class="col-sm-2 col-md-1 soc-menu">
+			<div class="soc-menu">
 				<a href="#">
 					<i class="fa fa-search"></i>
 				</a>
