@@ -15,7 +15,7 @@
 get_header();
 ?>
 
-	<main id="page" class="container page">
+	<main id="page" class="container enter-page">
 
 		<?php
 	

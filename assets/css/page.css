@@ -1,7 +1,8 @@
 /* Posts and pages
 --------------------------------------------- */
-.page{
+.enter-page{
   padding-bottom: 120px;
+  padding-top: 80px;
 }
 .parent {
     display: flex;
