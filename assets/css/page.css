@@ -110,3 +110,9 @@
     border: solid #0A090C;   
     border-width: 0 2px 2px 0;
 }  
+
+/*  List of children pages
+--------------------------------------------- */
+.children-list a{
+    color: #47356C;
+}

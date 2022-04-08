@@ -83,3 +83,29 @@ ol {
 		width: 1170px;
 	}
 }	
+
+/* let's say this is your global image block css */
+.wp-block-image img {
+	background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    background-color: #F0EDEE;
+    height: 239px;
+    display: block;
+    width: 100%;
+    opacity: 1;
+    transition: 0.7s all;
+}
+	
+	/* this is the css that will remove the global image block css */
+.wp-block-image.link-block img {
+	background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    background-color: #F0EDEE;
+    height: 239px;
+    display: block;
+    width: 100%;
+    opacity: 1;
+    transition: 0.7s all;
+}
