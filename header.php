@@ -30,8 +30,8 @@
             <div class="row logo-row">
                 <div class="col-sm-12">
                     <div>
-                        <a href="" class="logo">
-                            <img src="<?php echo get_template_directory_uri(); ?> . /assets/img/ipze_logo.svg" alt="ІПЗЕ">
+                        <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" class="logo">
+                            <img src="<?php echo get_template_directory_uri(); ?>/assets/img/ipze_logo.svg" alt="ІПЗЕ">
                         </a>
                     </div>
 

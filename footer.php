@@ -49,7 +49,7 @@
 			</div>
 		</div>
 
-		<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" class="flogo"><img src="<?php echo get_template_directory_uri(); ?> . /assets/img/ipze_logo_footer.svg"></a>
+		<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" class="flogo"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/ipze_logo_footer.svg"></a>
 
 		</div>
 	</footer><!-- #colophon -->
