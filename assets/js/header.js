@@ -3,7 +3,6 @@ $(document).ready(function (){
     $('.head_menu ul ul, .head_menu ul ul ul').addClass('submenu');
     $('.head_menu ul').addClass('topmenu');
     var windowWidth = window.innerWidth;
-    console.log(windowWidth);
     if(windowWidth <= 1020){
         $('.head_menu').addClass('head_burger_menu').css("display", "none");
     }
@@ -12,7 +11,6 @@ $(document).ready(function (){
     }
     $(window).resize(function (){
         windowWidth = window.innerWidth;
-        console.log(windowWidth);
         if(windowWidth <= 1020){
             $('.head_menu').addClass('head_burger_menu').css("display", "none");
             $('.header_burger, .menu_back').removeClass('active');

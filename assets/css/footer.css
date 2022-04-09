@@ -88,6 +88,9 @@ footer .sys-in {
         display: inline-block;
         margin: 0 5px 10px;
     }
+    footer nav ul{
+         text-align: justify;
+     }
 
 }
 @media (max-width: 1200px){
