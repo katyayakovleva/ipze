@@ -16,6 +16,86 @@
     font-size: 46px;
     padding-top: 108px;
 }
+
+.buran-wr .parallax-window {
+    min-height: 790px;
+    background: transparent;
+    padding-bottom: 138px;
+}
+.buran-wr h2 {
+    color: #FDD95B;
+    font-size: 35px;
+    padding: 93px 0 52px;
+    /*padding: 0;*/
+    text-align: left;
+    font-weight: bold
+}
+.buran-wr h3{
+    margin-bottom: 11px;
+    font-size: 25px;
+}
+.buran-wr h3 a {
+    color: #FDD95B;
+    transition: 0.5s all;
+    font-weight: bold;
+}
+.buran-wr p {
+    font-size: 18px;
+    margin: 0 0 25px 0;
+    color: #E7ECEF;
+}
+.buran-wr p a{
+    color: #E7ECEF;
+}
+.space-shuttle{
+    width: 50px;
+    height: 50px;
+}
+.code{
+    width: 50px;
+    height: 50px;
+}
+.monitor{
+    width: 50px;
+    height: 50px;
+}
+.employee{
+    width: 50px;
+    height: 50px;
+}
+.banner-text img{
+}
+@media (min-width: 768px) {
+    .col-sm-11 {
+        width: 91.66666667%;
+    }
+}
+@media (max-width: 768px) {
+    .buran-wr h3 {
+        font-size: 18px;
+    }
+    .buran-wr p {
+        font-size: 14px;
+    }
+}
+@media (max-width: 500px) {
+    .space-shuttle{
+        width: 40px;
+        height: 40px;
+    }
+    .code{
+        width: 40px;
+        height: 40px;
+    }
+    .monitor{
+        width: 40px;
+        height: 40px;
+    }
+    .employee{
+        width: 40px;
+        height: 40px;
+    }
+}
 @media (max-width: 1020px) {
     .banner-wr{
         margin-top: 30px;
