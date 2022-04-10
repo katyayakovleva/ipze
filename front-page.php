@@ -16,7 +16,16 @@ get_header();
 ?>
 
 	<main id="primary" class="site-main">
+        <div class="banner-wr" style="background: url(<?php echo get_template_directory_uri(); ?>/assets/img/main-back.png) repeat-x top">
+            <div class="banner" style="background: url(<?php echo get_template_directory_uri(); ?>/assets/img/main.jpg) no-repeat center">
+                <div class="container">
+                    <h2>
+                        Навчаємо програмувати
 
+                    </h2>
+                </div>
+            </div>
+        </div>
 		<?php
 		if ( have_posts() ) :
 

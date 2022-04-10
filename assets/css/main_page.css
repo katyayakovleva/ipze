@@ -1,0 +1,28 @@
+.banner-wr .banner {
+    height: 800px;
+}
+.banner-wr{
+    margin-top: 60px;
+    height: 800px;
+    width: 100%;
+}
+.banner{
+    width: 100%;
+}
+.banner-wr .banner h2 {
+    text-align: center;
+    color: #47356C;
+    font-weight: 900;
+    font-size: 46px;
+    padding-top: 108px;
+}
+@media (max-width: 1020px) {
+    .banner-wr{
+        margin-top: 30px;
+    }
+}
+@media (max-width: 670px){
+    .banner-wr .banner h2 {
+        font-size: 35px;
+    }
+}
