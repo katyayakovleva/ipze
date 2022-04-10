@@ -8,6 +8,7 @@
 }
 .banner{
     width: 100%;
+    position: fixed;
 }
 .banner-wr .banner h2 {
     text-align: center;
@@ -64,6 +65,9 @@
     height: 50px;
 }
 .banner-text img{
+}
+#primary{
+    position: inherit;
 }
 @media (min-width: 768px) {
     .col-sm-11 {
