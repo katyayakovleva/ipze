@@ -78,6 +78,9 @@ footer .sys-in {
 .foot-soc-menu .fa-telegram-plane{
     color: #E7ECEF;
 }
+#page{
+    position: inherit;
+}
 @media (min-width: 1200px) {
     footer .row{
         opacity: 0.8;
