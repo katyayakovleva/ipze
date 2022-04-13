@@ -8,7 +8,7 @@
 }
 .banner{
     width: 100%;
-    position: fixed;
+    position: sticky;
 }
 .banner-wr .banner h2 {
     text-align: center;
