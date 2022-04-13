@@ -16,8 +16,8 @@ get_header();
 ?>
 
 	<main id="primary" class="site-main">
-        <div class="banner-wr" style="background: url(<?php echo get_template_directory_uri(); ?>/assets/img/main-back.png) repeat-x top">
-            <div class="banner" style="background: url(<?php echo get_template_directory_uri(); ?>/assets/img/main.jpg) no-repeat center">
+        <div class="banner-wr" style="background: url(<?php echo get_template_directory_uri(); ?>/assets/img/main-back_650.jpg) repeat-x top">
+            <div class="banner" style="background: url(<?php echo get_template_directory_uri(); ?>/assets/img/main_650.jpg) no-repeat center">
                 <div class="container">
                     <h2>
                         Навчаємо програмувати

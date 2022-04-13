@@ -114,6 +114,9 @@ body {
     font-size: 15px;
     margin-right: 6px;
 }
+.soc-menu{
+    opacity: 0.85;
+}
 @media (min-width: 1021px) {
 /*menu*/
     nav {

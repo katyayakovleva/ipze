@@ -24,12 +24,9 @@ footer .container {
     margin-left: auto;
     position: inherit;
 }
-/*footer .row{*/
-/*    opacity: 0.8;*/
-/*    margin-right: -15px;*/
-/*    margin-left: -15px;*/
-/*    display: flex;*/
-/*}*/
+footer .row{
+    opacity: 0.8;
+}
 
 footer .footer-menu-div{
     padding-left: 35px;
@@ -81,6 +78,17 @@ footer .sys-in {
 #page{
     position: inherit;
 }
+/*.menu-footer_menu-container ul {*/
+/*    -webkit-columns: 2;*/
+/*    -moz-columns: 2;*/
+/*    columns: 2;*/
+/*    text-align: left;*/
+/*    list-style: none;*/
+/*    justify-content: left;*/
+/*}*/
+.footer-menu li{
+    text-align: left;
+}
 @media (min-width: 1200px) {
     footer .row{
         opacity: 0.8;
@@ -89,7 +97,7 @@ footer .sys-in {
         display: flex;
     }
     .footer-menu li{
-        display: inline-block;
+        /*display: inline-block;*/
         margin: 0 5px 10px;
     }
     footer nav ul{
