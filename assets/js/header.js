@@ -43,7 +43,10 @@ $(document).ready(function (){
 		$("#search-form-burger").slideToggle();
 	});
         
-  
+    $("#header-burger").click(function() {
+		$("#search-form-burger").hide();
+	});
+        
     // $("#boxclose").click(function(e){ //on the button click.
     //     e.preventDefault();
     //     $("#search-form").slideToggle();//this will be disappeared.
