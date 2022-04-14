@@ -70,20 +70,31 @@
                         );
                         ?>
                         <div class="burger_soc-menu">
-                            <a href=""><i class="fa fa-search"></i> </a>
+                            <i id="search-icon-burger" class="fa fa-search"></i> 
                             <a href=""><i class="fab fa-telegram-plane"></i></a>
                             <a href="" target="_blank"><i class="fab fa-facebook-f"></i></a>
                         </div>
+                        <form id="search-form-burger" class="search-form-burger" method="get" action="<?php echo esc_url( home_url( '/' ) ); ?>">
+                            <input type="text" class="search-field" name="s" placeholder="Пошук..." value="<?php echo get_search_query(); ?>">
+                        </form>
                     </nav><!-- #site-navigation -->
                 </div>
                 <div class="col-md-1 soc-menu">
-                    <a href=""><i class="fa fa-search"></i> </a>
+                    <i id="search-icon" class="fa fa-search"></i>
                     <a href=""><i class="fab fa-telegram-plane"></i></a>
                     <a href="" target="_blank"><i class="fab fa-facebook-f"></i></a>
                 </div>
             </div>
+            <div >
+                <form id="search-form" class="search-form" method="get" action="<?php echo esc_url( home_url( '/' ) ); ?>">
+                    <input type="text" class="search-field" name="s" placeholder="Пошук..." value="<?php echo get_search_query(); ?>">
+                    <!-- <i id="boxclose" class="fa fa-times" aria-hidden="true"></i> -->
+                </form>
+            </div>
+
+           
         </div>
-        </div>
+        
     </header>
 
 
