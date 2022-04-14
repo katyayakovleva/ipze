@@ -17,8 +17,15 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="profile" href="https://gmpg.org/xfn/11">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <style>
+        input[type="search"]::-webkit-search-cancel-button {
+            background: url("<?php echo get_template_directory_uri(); ?>/assets/img/icons/eva_close-fill.svg");
 
+        }
+    </style>
     <?php wp_head(); ?>
+
+    
 </head>
 
 <body <?php body_class(); ?>>
@@ -75,7 +82,7 @@
                             <a href="" target="_blank"><i class="fab fa-facebook-f"></i></a>
                         </div>
                         <form id="search-form-burger" class="search-form-burger" method="get" action="<?php echo esc_url( home_url( '/' ) ); ?>">
-                            <input type="text" class="search-field" name="s" placeholder="Пошук..." value="<?php echo get_search_query(); ?>">
+                            <input type="search" class="search-field" name="s" placeholder="Пошук..." value="<?php echo get_search_query(); ?>">
                         </form>
                     </nav><!-- #site-navigation -->
                 </div>
@@ -87,7 +94,7 @@
             </div>
             <div >
                 <form id="search-form" class="search-form" method="get" action="<?php echo esc_url( home_url( '/' ) ); ?>">
-                    <input type="text" class="search-field" name="s" placeholder="Пошук..." value="<?php echo get_search_query(); ?>">
+                    <input type="search" class="search-field" name="s" placeholder="Пошук..." value="<?php echo get_search_query(); ?>">
                     <!-- <i id="boxclose" class="fa fa-times" aria-hidden="true"></i> -->
                 </form>
             </div>
