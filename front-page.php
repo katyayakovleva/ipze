@@ -153,13 +153,13 @@ get_header();
                                     <span class="cap blocks">
                                         Блоки вибіркових дисциплін:                                                            </span>
                                     <div class="row first_cap_block">
-                                        <i class="far fa-circle circle col-md-1"></i>
-                                        <div class="line col-md-11"> Програмне забезпечення розподілених систем та Web-технологій</div>
+                                        <i class="far fa-circle circle col-1"></i>
+                                        <div class="line col-11"> Програмне забезпечення розподілених систем та Web-технологій</div>
 
                                     </div>
                                     <div class="row">
-                                        <i class="far fa-circle circle_2 col-md-1"></i>
-                                        <div class="line col-md-11">Програмне забезпечення кібер-енергетичних систем</div>
+                                        <i class="far fa-circle circle_2 col-1"></i>
+                                        <div class="line col-11">Програмне забезпечення кібер-енергетичних систем</div>
                                     </div>
                                 </div>
                                 </span>
@@ -170,6 +170,7 @@ get_header();
 
             </div>
         </div>
+        
         <?php
 		if ( have_posts() ) :
 
