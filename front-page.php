@@ -170,7 +170,74 @@ get_header();
 
             </div>
         </div>
-        
+
+        <!-- Компанії -->
+        <div class="container companies">
+            <h2>Компанії, в яких працюють наші випускники</h2>
+            <div class="brands">
+                <i><img src="<?php echo get_template_directory_uri(); ?>/assets/img/companies/google.png" alt="Google"></i>
+                <i><img src="<?php echo get_template_directory_uri(); ?>/assets/img/companies/samsung.png" alt="samsung"></i>
+                <i><img src="<?php echo get_template_directory_uri(); ?>/assets/img/companies/microsoft.png" alt="microsoft"></i>
+                <i><img src="<?php echo get_template_directory_uri(); ?>/assets/img/companies/epam.png" alt="Epam"></i>
+                <i><img src="<?php echo get_template_directory_uri(); ?>/assets/img/companies/netcracker.png" alt="netcracker"></i>
+                <i><img src="<?php echo get_template_directory_uri(); ?>/assets/img/companies/luxsoft.png" alt="luxsoft"></i>
+                <i><img src="<?php echo get_template_directory_uri(); ?>/assets/img/companies/intersystems.png" alt="intersystems"></i>
+                <i><img src="<?php echo get_template_directory_uri(); ?>/assets/img/companies/ciklum.png" alt="ciklum"></i>
+                <i><img src="<?php echo get_template_directory_uri(); ?>/assets/img/companies/softserve.png" alt="softserve"></i>
+                <i><img src="<?php echo get_template_directory_uri(); ?>/assets/img/companies/yahoo.png" alt="yahoo"></i>
+            </div>
+        </div>
+
+        <!-- Наука -->
+        <div class="science-wr">
+            <div class="container">
+                <h2><a href="">Наукові дослідження </a></h2>
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <h3><a href="">Навчально-наукові лабораторії</a></h3>
+                        <p>
+                            <i class="flaticon-technology"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/icons/analytics.png"></i>
+                            <span>
+                    Лабораторія аналізу великих обсягів даних та управління проектами                                        </span>
+                        </p>
+
+                        <p>
+                            <i class="flaticon-analytics"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/icons/analytics.png"></i>
+                            <span>
+                    Науково-навчальна лабораторія комп’ютерного моделювання динамічних процесів та систем                                        </span>
+                        </p>
+
+                        <p>
+                            <i class="flaticon-server"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/icons/analytics.png"></i>
+                            <span>
+                    Навчально-наукова лабораторія кібер-фізичних енергетичних інфраструктур                                        </span>
+                        </p>
+
+                        <p>
+                            <i class="flaticon-computer"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/icons/analytics.png"></i>
+                            <span>
+                    Навчально-наукова лабораторія комп’ютерного моделювання та моніторингу довкілля                                        </span>
+                        </p>
+                    </div>
+                    <div class="col-md-6">
+                        <h3><a href="http://apeps.kpi.ua/scientific-schools">Наукові школи</a></h3>
+                        <p>
+                            <i class="flaticon-shapes"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/icons/analytics.png"></i>
+                            <span>
+                    Автоматизація проектування розподілених динамічних об’єктів і систем                                        </span>
+                        </p>
+                        <p>
+                            <i class="flaticon-dodecahedron"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/icons/analytics.png"></i>
+                            <span>
+                    Геометричне моделювання, ізотропна геометрія та деформаційне моделювання складних об’єктів, процесів та систем                                        </span>
+                        </p>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <?php
 		if ( have_posts() ) :
 
