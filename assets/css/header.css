@@ -10,10 +10,10 @@ header a:hover{
 }
 *{
     text-decoration: none;
-    text-decoration-line: none;
-    text-decoration-thickness: none;
-    text-decoration-style: initial;
-    text-decoration-color: initial;
+    /*text-decoration-line: none;*/
+    /*text-decoration-thickness: none;*/
+    /*text-decoration-style: initial;*/
+    /*text-decoration-color: initial;*/
 }
 header *:before, *:after {
     -webkit-box-sizing: border-box;

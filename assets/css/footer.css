@@ -1,6 +1,5 @@
 footer{
     background: #47356C;
-
     color: #E7ECEF;
     padding: 97px 0 0;
     font-size: 14px;
@@ -15,9 +14,6 @@ a{
 }
 footer .container {
     min-height: 298px;
-    /*position: relative;*/
-    /*padding-bottom: 129px;*/
-
     padding-right: 15px;
     padding-left: 15px;
     margin-right: auto;
@@ -33,7 +29,6 @@ footer .footer-menu-div{
 }
 
 footer .flogo {
-    /*position: absolute;*/
     bottom: 0;
     left: 15px;
     display: block;
@@ -47,8 +42,11 @@ footer .flogo img{
 }
 footer a, footer a:visited, footer h2 {
     color: #E7ECEF;
+    text-decoration: none;
 }
-
+.footer h2 a:hover{
+    color: #E7ECEF;
+}
 footer .title {
     font-size: 16px;
     font-style: normal;
@@ -56,8 +54,6 @@ footer .title {
 footer p {
     margin: 0 0 10px;
 }
-
-
 footer .sys-in {
     font-size: 12px;
     margin-top: 33px;
@@ -78,14 +74,6 @@ footer .sys-in {
 #page{
     position: inherit;
 }
-/*.menu-footer_menu-container ul {*/
-/*    -webkit-columns: 2;*/
-/*    -moz-columns: 2;*/
-/*    columns: 2;*/
-/*    text-align: left;*/
-/*    list-style: none;*/
-/*    justify-content: left;*/
-/*}*/
 .footer-menu li{
     text-align: left;
 }
@@ -97,13 +85,11 @@ footer .sys-in {
         display: flex;
     }
     .footer-menu li{
-        /*display: inline-block;*/
         margin: 0 5px 10px;
     }
     footer nav ul{
          text-align: justify;
      }
-
 }
 @media (max-width: 1200px){
     .footer-menu li{
@@ -132,7 +118,7 @@ footer .sys-in {
         padding-left: 35px;
     }
     footer .container {
-        padding-bottom: 0px;
+        padding-bottom: 0;
     }
     footer .flogo {
         margin-top: 30px;
