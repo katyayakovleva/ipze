@@ -117,3 +117,28 @@
 .children-list a{
     color: #47356C;
 }
+
+/*  Single post
+--------------------------------------------- */
+/* .post-content{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    color: #0A090C;
+    line-height: 1.3;
+} */
+.post .simple-title .title{
+
+    font-size: 30px;
+}
+/*  Page with news
+--------------------------------------------- */
+.page-news{
+    margin-top: 80px;
+}
+.page-news .news-wr .container{
+    padding-top: 60px;
+    padding-bottom: 30px;
+}
+.page-news .news-wr h2{
+    margin-bottom: 54px;
+}

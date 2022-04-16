@@ -242,13 +242,13 @@ if ( defined( 'JETPACK__VERSION' ) ) {
  */
 function get_breadcrumb() {
     
-    if (is_category() || is_single()) {
-        echo ' &nbsp;&nbsp;<&nbsp;&nbsp;  ';
-        the_category(' &bull; ');
-            if (is_single()) {
-                echo " &nbsp;&nbsp;<&nbsp;&nbsp;  ";
-                the_title();
-            }
+    if (is_single()) {
+		
+		if(in_category("news")){
+			echo '<a href="'.get_permalink( get_page_by_path( 'news' ) ).'" rel="nofollow">Новини</a>';
+		}
+            
+                
 	
     } 
 	elseif (is_page()) {
@@ -257,7 +257,6 @@ function get_breadcrumb() {
 		$page = get_queried_object();
 		$parent_id = wp_get_post_parent_id($page);
 
-		// echo " &nbsp;&nbsp;< &nbsp;&nbsp; ";
 		if($parent_id){
 			
 			echo '<a href="'.get_permalink($parent_id).'" rel="nofollow">';
