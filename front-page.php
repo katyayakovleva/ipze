@@ -116,7 +116,7 @@ get_header();
 
         </div>
 
-<!--        <!-- Спеціальності -->
+<!--        Спеціальності -->
         <div class="specs-wr">
             <div class="parallax-window" data-parallax="scroll" data-image-src="<?php echo get_template_directory_uri(); ?>/assets/img/specs.jpg" data-speed="0.5">
                 <div class="container">
@@ -170,7 +170,39 @@ get_header();
 
             </div>
         </div>
+        <!-- Останні новини -->
+        <div class="news-wr">
+            <div class="container">
+                <h2><a href="#">Останні новини</a></h2>
+                <?php 
+                    $latest_news = get_posts(
+                        array(
+                            'showposts' => 6,
+                            'category' => 'news',
+                            'orderby' => 'date',
+                        )
+                    );
+                ?>
 
+                <div class="row items">
+                    <?php 
+                        foreach ( $latest_news as $post ) :?>
+                            <div class="item-wrapper col-sm-6 col-md-4">
+                                <div class="tile">
+                                    <a class="image" href="<?php echo  get_permalink($post->ID); ?>" style="background-image: url('<?php echo wp_get_attachment_url( get_post_thumbnail_id( $post->ID ) ); ?>')">
+                                    </a>
+                                    <a class="caption" href="<?php echo  get_permalink($post->ID); ?>">
+                                        <h3><?php the_title()?></h3>
+                                    </a>
+                                </div>
+                            </div>
+                    <?php
+                        endforeach; 
+                        wp_reset_postdata();
+                    ?>
+                </div>
+            </div>
+        </div>
         <!-- Компанії -->
         <div class="container companies">
             <h2>Компанії, в яких працюють наші випускники</h2>
@@ -238,38 +270,7 @@ get_header();
             </div>
         </div>
 
-        <?php
-		if ( have_posts() ) :
-
-			if ( is_home() && ! is_front_page() ) :
-				?>
-				<header>
-					<h1 class="page-title screen-reader-text"><?php single_post_title(); ?></h1>
-				</header>
-				<?php
-			endif;
-
-			/* Start the Loop */
-			while ( have_posts() ) :
-				the_post();
-
-				/*
-				 * Include the Post-Type-specific template for the content.
-				 * If you want to override this in a child theme, then include a file
-				 * called content-___.php (where ___ is the Post Type name) and that will be used instead.
-				 */
-				get_template_part( 'template-parts/content', get_post_type() );
-
-			endwhile;
-
-			the_posts_navigation();
-
-		else :
-
-			get_template_part( 'template-parts/content', 'none' );
-
-		endif;
-		?>
+       
 
 	</main><!-- #main -->
 
