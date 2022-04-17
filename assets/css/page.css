@@ -152,9 +152,9 @@
         width: 33.33333333%;
     }
 }
-@media (min-width: 576px){
+@media (max-width: 767px){
     .page-news .col-sm-6 {
-        flex: 0 0 auto;
+        /* flex: 0 0 auto; */
         width: 100%;
     }
 }
