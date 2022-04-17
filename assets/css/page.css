@@ -1,5 +1,11 @@
 /* Posts and pages
 --------------------------------------------- */
+.page-news{
+    position: sticky;
+}
+.news-wr{
+    position: inherit;
+}
 .enter-page{
   padding-bottom: 120px;
   padding-top: 80px;
