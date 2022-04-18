@@ -24,7 +24,7 @@
             <?php foreach( $pages as $page ) { ?>
                 <li>
                     <a href="<?php echo  get_permalink($page->ID); ?>" rel="bookmark" title="<?php echo $page->post_title; ?>">
-                        <div class=""><?php echo get_the_post_thumbnail($page->ID, 'small-thumb'); ?></div>
+                        <div class=""><?php echo get_the_post_thumbnail($page->ID); ?></div>
                         <div>
                             <h3 class=""><?php echo $page->post_title; ?></h3>
                         </div>
