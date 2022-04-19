@@ -255,9 +255,9 @@ function get_breadcrumb() {
 		elseif(get_post_type()=='teacher'){
 			echo '<a href="'.get_post_type_archive_link('teacher').'" rel="nofollow">Викладачі</a>';
 		}
-		elseif(in_category("events")){
+		elseif(in_category("science_events")){
 			// Get the ID of a given category
-			$category_id = get_cat_ID( 'events' );
+			$category_id = get_cat_ID( 'science_events' );
  
 			// Get the URL of this category
 			$category_link = get_category_link( $category_id );
