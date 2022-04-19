@@ -12,31 +12,25 @@ get_header();
         <div class="container">
             <h2><a href="#">Новини</a></h2>
             <?php 
-                $latest_news = get_posts(
+                $posts = get_posts(
                     array(
                         'category' => 'news',
                         'orderby' => 'date',
+                        'post__not_in' => get_option('sticky_posts')
                     )
                 );
+                // $posts2 = get_posts(
+                //     array(
+                //         'category' => 'news',
+                //         // 'orderby' => 'date',
+                //         'post__in' => get_option('sticky_posts')
+                //     )
+                // );
+                // $posts = array_merge($posts2, $posts1);
+                get_template_part( 'template-parts/content', 'posts-list' );
             ?>
 
-            <div class="row items">
-                <?php 
-                    foreach ( $latest_news as $post ) :?>
-                        <div class="item-wrapper col-sm-6 col-md-4">
-                            <div class="tile">
-                                <a class="image" href="<?php echo  get_permalink($post->ID); ?>" style="background-image: url('<?php echo wp_get_attachment_url( get_post_thumbnail_id( $post->ID ) ); ?>')">
-                                </a>
-                                <a class="caption" href="<?php echo  get_permalink($post->ID); ?>">
-                                    <h3><?php the_title()?></h3>
-                                </a>
-                            </div>
-                        </div>
-                <?php
-                    endforeach; 
-                    wp_reset_postdata();
-                ?>
-            </div>
+            
         </div>
     </div>
 </div>

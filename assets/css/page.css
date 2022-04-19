@@ -136,6 +136,12 @@
 
     font-size: 30px;
 }
+.post ol, .post li{
+    list-style-type: auto;
+}
+
+
+
 /*  Page with news
 --------------------------------------------- */
 .page-news{
@@ -148,18 +154,76 @@
 .page-news .news-wr h2{
     margin-bottom: 54px;
 }
+
+
+
+/*  Content with posts
+--------------------------------------------- */
+.posts .post{
+    position: relative;
+    margin-bottom: 30px;
+}
+
+.posts .post .image{
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    background-color: #F0EDEE;
+    height: 239px;
+    display: block;
+    width: 100%;
+    opacity: 1;
+    transition: 0.7s all;
+}
+.posts .post .default-image{
+    background-size: auto;
+}
+.posts .post a.caption {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    padding: 15px;
+    height: 200px;
+    overflow: hidden;
+    background: #47356C;
+    text-decoration: none;
+    color: #ffffff;
+    transition: all 0.3s;
+}
+
+.posts .post:hover a.caption{
+    color:#47356C;
+    background: #FDD95B; 
+}
+
+.posts .post:hover a.caption h3{
+    color:#47356C;
+
+}
+.posts .post a.caption h3 {
+    color: #ffffff;
+    size: 18px;
+    font-weight: normal;
+    text-align: center;
+    margin: 0;
+    width: 100%;
+    transition: all 0.3s;
+    line-height:1.5;
+    
+    font-size: 1.17em;   
+}
 @media (min-width: 768px){
-    .page-news .col-sm-6 {
+    .posts .col-sm-6 {
         width: 50%;
     }
 }
 @media (min-width: 992px){
-    .page-news .col-md-4 {
+    .posts .col-md-4 {
         width: 33.33333333%;
     }
 }
 @media (max-width: 767px){
-    .page-news .col-sm-6 {
+    .posts .col-sm-6 {
         /* flex: 0 0 auto; */
         width: 100%;
     }

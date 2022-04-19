@@ -245,11 +245,26 @@ function get_breadcrumb() {
     if (is_single()) {
 		
 		if(in_category("news")){
-			echo '<a href="'.get_permalink( get_page_by_path( 'news' ) ).'" rel="nofollow">Новини</a>';
+			// Get the ID of a given category
+			$category_id = get_cat_ID( 'news' );
+ 
+			// Get the URL of this category
+			$category_link = get_category_link( $category_id );
+			echo '<a href="'.esc_url( $category_link ).'" rel="nofollow">Новини</a>';
 		}
-            
-                
-	
+		elseif(get_post_type()=='teacher'){
+			echo '<a href="'.get_post_type_archive_link('teacher').'" rel="nofollow">Викладачі</a>';
+		}
+		elseif(in_category("events")){
+			// Get the ID of a given category
+			$category_id = get_cat_ID( 'events' );
+ 
+			// Get the URL of this category
+			$category_link = get_category_link( $category_id );
+			echo '<a href="'.esc_url( $category_link ).'" rel="nofollow">Наукові заходи</a>';
+		}else{
+			echo '<a href="'.home_url().'" rel="nofollow">Головна</a>';
+		}
     } 
 	elseif (is_page()) {
 
@@ -277,3 +292,72 @@ function get_breadcrumb() {
     //     echo '</em>"';
     // }
 }
+function ipze_teacher_post_type() {
+	$labels = array(
+	  'name'               => _x( 'Teachers', 'post type general name' ),
+	  'singular_name'      => _x( 'Teacher', 'post type singular name' ),
+	  'add_new'            => _x( 'Add New', 'teacher' ),
+	//   'add_new_item'       => __( 'Add New Teacher' ),
+	//   'edit_item'          => __( 'Edit' ),
+	//   'new_item'           => __( 'New Product' ),
+	//   'all_items'          => __( 'All Products' ),
+	//   'view_item'          => __( 'View Product' ),
+	//   'search_items'       => __( 'Search Products' ),
+	//   'not_found'          => __( 'No products found' ),
+	//   'not_found_in_trash' => __( 'No products found in the Trash' ), 
+	  
+	  'menu_name'          => 'Teachers'
+	);
+	$args = array(
+	  'labels'        => $labels,
+	  'public'        => true,
+	  'menu_position' => 5,
+	  'rewrite'       => array( 'slug' => 'teachers' ),
+	  'capability_type'=> 'post',
+	  'supports'      => array( 'title', 'editor', 'thumbnail' ),
+	  'has_archive'   => true,
+	  'hierarchical'  => false,
+	  'show_in_rest'  => true,
+	  'template'	  =>array(
+			array( 'core/columns', array(), array(
+				array( 'core/column', array(), array(
+					array( 'core/image', array() ),
+				) ),
+				array( 'core/column', array(), array(
+					array( 'core/paragraph', array(
+						'placeholder' => 'Інформація про викладача'
+					) ),
+				) ),
+			) ),
+			array('core/group', array(), array(
+				array( 'core/paragraph', array(
+					'placeholder' => 'Посилання на сторінку та розклад викладача',
+				) ),
+			) ),
+			array('core/group', array(), array(
+				array( 'core/paragraph', array(
+					'content' => 'Основні публікації:',
+				) ),
+				array( 'core/list', array(
+					'style' => array(
+						'list-style-type' => 'auto',
+					)
+				) ),
+			) ),
+			
+			
+		)
+	);
+	register_post_type( 'teacher', $args ); 
+  }
+  add_action( 'init', 'ipze_teacher_post_type' );
+
+function remove_category( $string, $type )  {          
+	if ( $type != 'single' && $type == 'category' && ( strpos( $string, 'category' ) !== false ) ) {
+		$url_without_category = str_replace( "/category/", "/", $string );              
+		return trailingslashit( $url_without_category );         
+	}      
+	return $string;  
+}     
+add_filter( 'user_trailingslashit', 'remove_category', 100, 2);
+
