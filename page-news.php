@@ -12,24 +12,16 @@ get_header();
         <div class="container">
             <h2><a href="#">Новини</a></h2>
             <?php 
+                $category_id = get_cat_ID( 'news' );
                 $posts = get_posts(
                     array(
-                        'category' => 'news',
+                        'showposts' => -1,
+                        'category' => $category_id,
                         'orderby' => 'date',
-                        'post__not_in' => get_option('sticky_posts')
                     )
                 );
-                // $posts2 = get_posts(
-                //     array(
-                //         'category' => 'news',
-                //         // 'orderby' => 'date',
-                //         'post__in' => get_option('sticky_posts')
-                //     )
-                // );
-                // $posts = array_merge($posts2, $posts1);
                 get_template_part( 'template-parts/content', 'posts-list' );
             ?>
-
             
         </div>
     </div>
