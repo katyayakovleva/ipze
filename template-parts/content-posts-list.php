@@ -8,14 +8,14 @@
 
 ?>
 
-<section class="posts">
+<section class="posts-list">
 
             <div class="row items">
                 <?php 
                     
                     foreach ( $posts as $post ) :?>
                         <div class="item-wrapper col-sm-6 col-md-4">
-                            <div class="post" >
+                            <div class="post-in-list" >
                                 <?php if ( has_post_thumbnail() ) : ?>
                                     <a class="image" href="<?php echo  get_permalink($post->ID); ?>" style="background-image: url('<?php echo wp_get_attachment_url( get_post_thumbnail_id( $post->ID ) ); ?>')">
                                     </a>

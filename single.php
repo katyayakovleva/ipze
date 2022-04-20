@@ -8,7 +8,7 @@
 get_header();
 ?>
 
-	<main id="primary" class="container enter-page post">
+	<main id="primary" class="container enter-page single">
 
 		<?php
 			get_template_part( 'template-parts/content', "simple-title" );

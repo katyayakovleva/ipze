@@ -318,35 +318,35 @@ function ipze_teacher_post_type() {
 	  'has_archive'   => true,
 	  'hierarchical'  => false,
 	  'show_in_rest'  => true,
-	  'template'	  =>array(
-			array( 'core/columns', array(), array(
-				array( 'core/column', array(), array(
-					array( 'core/image', array() ),
-				) ),
-				array( 'core/column', array(), array(
-					array( 'core/paragraph', array(
-						'placeholder' => 'Інформація про викладача'
-					) ),
-				) ),
-			) ),
-			array('core/group', array(), array(
-				array( 'core/paragraph', array(
-					'placeholder' => 'Посилання на сторінку та розклад викладача',
-				) ),
-			) ),
-			array('core/group', array(), array(
-				array( 'core/paragraph', array(
-					'content' => 'Основні публікації:',
-				) ),
-				array( 'core/list', array(
-					'style' => array(
-						'list-style-type' => 'auto',
-					)
-				) ),
-			) ),
+	//   'template'	  =>array(
+	// 		array( 'core/columns', array(), array(
+	// 			array( 'core/column', array(), array(
+	// 				array( 'core/image', array() ),
+	// 			) ),
+	// 			array( 'core/column', array(), array(
+	// 				array( 'core/paragraph', array(
+	// 					'placeholder' => 'Інформація про викладача'
+	// 				) ),
+	// 			) ),
+	// 		) ),
+	// 		array('core/group', array(), array(
+	// 			array( 'core/paragraph', array(
+	// 				'placeholder' => 'Посилання на сторінку та розклад викладача',
+	// 			) ),
+	// 		) ),
+	// 		array('core/group', array(), array(
+	// 			array( 'core/paragraph', array(
+	// 				'content' => 'Основні публікації:',
+	// 			) ),
+	// 			array( 'core/list', array(
+	// 				'style' => array(
+	// 					'list-style-type' => 'auto',
+	// 				)
+	// 			) ),
+	// 		) ),
 			
 			
-		)
+		// )
 	);
 	register_post_type( 'teacher', $args ); 
   }

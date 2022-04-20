@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Загаоловк з зображенням 
+ * Template Name: Заголовок з зображенням 
  *
  * @package IPZE
  */
