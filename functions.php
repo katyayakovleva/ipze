@@ -149,6 +149,7 @@ function ipze_scripts() {
 	wp_enqueue_style('page_css', get_template_directory_uri(). '/assets/css/page.css', array(), rand(111,9999));
 	wp_enqueue_style('main_page_css', get_template_directory_uri(). '/assets/css/main_page.css', array(), rand(111,9999));
     wp_enqueue_style('font_awesome_css', 'https://use.fontawesome.com/releases/v5.7.1/css/all.css', array(), rand(111,9999));
+	wp_enqueue_style('fonts', get_template_directory_uri(). '/assets/css/fonts.css', array(), rand(111,9999));
 
 
     wp_enqueue_script( 'ipze-navigation', get_template_directory_uri() . '/assets/js/navigation.js', array(), rand(111,9999), true );
