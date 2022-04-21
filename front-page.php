@@ -174,18 +174,19 @@ get_header();
         <div class="news-wr">
             <div class="container">
                 <h2><a href="#">Останні новини</a></h2>
-                <?php 
+                <?php
+                    $category_id = get_cat_ID('news');
                     $posts = get_posts(
                         array(
                             'showposts' => 6,
-                            'category' => 'news',
+                            'category' => $category_id,
                             'orderby' => 'date',
                         )
                     );
                     get_template_part( 'template-parts/content', 'posts-list' );
                 ?>
 
-                
+
             </div>
         </div>
         <!-- Компанії -->
@@ -254,8 +255,6 @@ get_header();
                 </div>
             </div>
         </div>
-
-       
 
 	</main><!-- #main -->
 

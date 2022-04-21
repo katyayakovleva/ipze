@@ -20,19 +20,28 @@
             ); 
             $pages = get_pages($args);      
         ?>
-        <ul class=""> 
-            <?php foreach( $pages as $page ) { ?>
-                <li>
-                    <a href="<?php echo  get_permalink($page->ID); ?>" rel="bookmark" title="<?php echo $page->post_title; ?>">
-                        <div class=""><?php echo get_the_post_thumbnail($page->ID); ?></div>
-                        <div>
-                            <h3 class=""><?php echo $page->post_title; ?></h3>
+        <div class="container">
+            <ul class="links_cont row">
+
+                <?php foreach( $pages as $post) { ?>
+                    <div class="item-wrapper col-sm-6 col-md-4">
+                        <div class="post-in-list" >
+                            <?php if ( has_post_thumbnail() ) : ?>
+                                <a class="image" href="<?php echo  get_permalink($post->ID); ?>" style="background-image: url('<?php echo wp_get_attachment_url( get_post_thumbnail_id( $post->ID ) ); ?>')">
+                                </a>
+                            <?php else: ?>
+                                <a class="image default-image" href="<?php echo  get_permalink($post->ID); ?>" style="background-image: url(<?php echo get_template_directory_uri(); ?>/assets/img/logo-alpha.png)">
+                                </a>
+                            <?php endif; ?>
+                            <a class="caption" href="<?php echo  get_permalink($post->ID); ?>">
+                                <h3><?php the_title()?></h3>
+                            </a>
                         </div>
-                        <span class=""><?php echo get_post_meta($page->ID, 'desc', true); ?></span>
-                    </a>
-                </li>
-            <?php } ?>
-        </ul>
+                    </div>
+                <?php } ?>
+            </ul>
+        </div>
+
 	</div><!-- .entry-content -->
 
 
