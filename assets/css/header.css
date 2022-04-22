@@ -52,7 +52,7 @@ body {
     overflow: visible;
 }
 .container {
-    transition: 0.5s all;
+    transition: 0.2s all;
 }
 .container {
     /*width: 100%;*/
@@ -116,6 +116,9 @@ body {
 }
 .soc-menu{
     opacity: 0.85;
+}
+.head_menu{
+    display: none;
 }
 @media (min-width: 1021px) {
 /*menu*/
