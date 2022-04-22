@@ -345,8 +345,8 @@ function ipze_teacher_post_type() {
 				) ),
 				array( 'core/group', array(), array(
 					array( 'core/paragraph', array(
-						'content' => 'Розклад викладача',
-						'link' => '#'
+						'content' => 'Розклад викладача'
+		
 					) ),
 				) ),
 			) ),

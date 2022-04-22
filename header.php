@@ -93,7 +93,7 @@
                 </div>
             </div>
             <div >
-                <form id="search-form" class="search-form" method="get" action="<?php echo esc_url( home_url( '/' ) ); ?>">
+                <form id="search-form_menu" class="search-form_menu" method="get" action="<?php echo esc_url( home_url( '/' ) ); ?>">
                     <input type="search" class="search-field" name="s" placeholder="Пошук..." value="<?php echo get_search_query(); ?>">
                 </form>
             </div>

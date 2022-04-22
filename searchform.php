@@ -9,6 +9,10 @@
 
 ?>
 
-<form id="search-form" class="search-form" method="get" action="<?php echo esc_url( home_url( '/' ) ); ?>">
+<form method="get" action="<?php echo esc_url( home_url( '/' ) ); ?>" class="search-form">
+
     <input type="text" class="search-field" name="s" placeholder="Пошук..." value="<?php echo get_search_query(); ?>">
+
+    <input type="submit" value="Пошук">
+
 </form>

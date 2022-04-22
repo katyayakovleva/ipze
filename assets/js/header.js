@@ -15,7 +15,7 @@ $(document).ready(function (){
             $('.head_menu').addClass('head_burger_menu').css("display", "none");
             $('.header_burger, .menu_back').removeClass('active');
             $('body').removeClass('scroll');
-            $("#search-form").hide();
+            $("#search-form_menu").hide();
 
         }
         else{
@@ -36,7 +36,7 @@ $(document).ready(function (){
     });
 
     $("#search-icon").click(function() {
-		$("#search-form").slideToggle();
+		$("#search-form_menu").slideToggle();
 	});
 
     $("#search-icon-burger").click(function() {
@@ -46,11 +46,7 @@ $(document).ready(function (){
     $("#header-burger").click(function() {
 		$("#search-form-burger").hide();
 	});
-        
-    // $("#boxclose").click(function(e){ //on the button click.
-    //     e.preventDefault();
-    //     $("#search-form").slideToggle();//this will be disappeared.
-    // });
+    
 
 });
 

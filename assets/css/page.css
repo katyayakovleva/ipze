@@ -279,3 +279,52 @@
 #content table[border="1"] tr:nth-child(2n+1) {
     background: #eee;
 } */
+
+/*  Search form on page
+--------------------------------------------- */
+
+/* .search-form_menu input{
+    font-size:120%;
+    padding:5px 7px;
+    border:1px solid #EEEEEE;
+
+}
+
+.search-form_menu input:focus {
+    outline: none !important;
+    border: 2px solid rgba(71, 54, 108, 0.65);
+    border-radius: 4px;
+}
+.search-form_menu{
+    display: none;
+    margin-top: 5px;
+    position: relative;
+    float: right;
+    width: 225px;
+} */
+
+.search-form{
+    margin-bottom: 45px;
+}
+
+.search-form input{
+    font-size:120%;
+    padding:5px 7px;
+    border:1px solid #EEEEEE;
+}
+.search-form input:focus {
+    outline: none !important;
+    border: 2px solid rgba(71, 54, 108, 0.65);
+    border-radius: 4px;
+}
+.search-form input[type="text"]{
+    min-width:50%;
+}
+.search-form input[type="submit"]{
+    padding-left: 25px;
+    padding-right:25px;
+    background: #47366C;
+    color: #fff;
+}
+
+
