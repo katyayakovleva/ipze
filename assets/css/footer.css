@@ -67,6 +67,7 @@ footer .sys-in {
 }
 .foot-soc-menu .fa-facebook-f{
     color: #E7ECEF;
+    margin-left: -2px;
 }
 .foot-soc-menu .fa-telegram-plane{
     color: #E7ECEF;

@@ -327,4 +327,27 @@
     color: #fff;
 }
 
+/*Контакти*/
+.contacts_cont .contacts_title strong{
+    color: #47356C;
+}
+.contacts_cont p{
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    color: #0A090C;
+}
+.contacts_cont p a{
+    color: #47356C;
+    outline: none;
+    text-decoration: underline;
+}
+@media (max-width: 767px){
+    .contacts_cont h2 {
+        font-size: 130%;
+    }
+}
+
 
