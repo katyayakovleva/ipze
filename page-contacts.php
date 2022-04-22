@@ -8,8 +8,12 @@
 get_header();
 ?>
     <div class="page-contacts">
+        
         <div class="contacts-wr">
             <div class="container">
+                <?php
+                    get_template_part( 'template-parts/content', 'main-title' );
+                ?>
                 <div class="content-text">
                     <h2>
                         Кафедра інженерії програмного забезпечення в енергетиці</h2>
