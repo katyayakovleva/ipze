@@ -244,8 +244,8 @@
 
 .content h2{margin-top:1.35em;}
 
-.content ul, .content ol {
-    overflow: hidden;
+.content ol, .content ul{
+    padding-left: 3em;
 }
 .content li{
 

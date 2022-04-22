@@ -57,7 +57,7 @@ h3{
     line-height: 1.5;
 }
 p{
-	margin-bottom: 1.5rem;
+	/* margin-bottom: 1.5rem; */
 }
 @media (min-width: 1200px){
 	.h3, h3 {
@@ -103,7 +103,7 @@ p{
 }	
 
 /* let's say this is your global image block css */
-.wp-block-image img {
+/* .wp-block-image img {
 	background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
@@ -114,9 +114,9 @@ p{
     opacity: 1;
     transition: 0.7s all;
 }
-	
-	/* this is the css that will remove the global image block css */
-.wp-block-image.link-block img {
+	 */
+/* this is the css that will remove the global image block css */
+/* .wp-block-image.link-block img {
 	background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
@@ -126,4 +126,18 @@ p{
     width: 100%;
     opacity: 1;
     transition: 0.7s all;
+} */
+
+/* 
+@media (min-width: 782px){
+	.wp-block-columns:not(.is-not-stacked-on-mobile)>.wp-block-column:not(:first-child) {
+		margin-left: 0;
+	}
+}
+.wp-block-columns {
+    margin-bottom:0;
+  
+} */
+.wp-block-image .alignleft {
+    margin: 0 20px 0 0;
 }

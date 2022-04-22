@@ -310,44 +310,60 @@ function ipze_teacher_post_type() {
 	  'menu_name'          => 'Teachers'
 	);
 	$args = array(
-	  'labels'        => $labels,
-	  'public'        => true,
-	  'menu_position' => 5,
-	  'rewrite'       => array( 'slug' => 'teachers' ),
-	  'capability_type'=> 'post',
-	  'supports'      => array( 'title', 'editor', 'thumbnail' ),
-	  'has_archive'   => true,
-	  'hierarchical'  => false,
-	  'show_in_rest'  => true,
-	//   'template'	  =>array(
-	// 		array( 'core/columns', array(), array(
-	// 			array( 'core/column', array(), array(
-	// 				array( 'core/image', array() ),
-	// 			) ),
-	// 			array( 'core/column', array(), array(
-	// 				array( 'core/paragraph', array(
-	// 					'placeholder' => 'Інформація про викладача'
-	// 				) ),
-	// 			) ),
-	// 		) ),
-	// 		array('core/group', array(), array(
-	// 			array( 'core/paragraph', array(
-	// 				'placeholder' => 'Посилання на сторінку та розклад викладача',
-	// 			) ),
-	// 		) ),
-	// 		array('core/group', array(), array(
-	// 			array( 'core/paragraph', array(
-	// 				'content' => 'Основні публікації:',
-	// 			) ),
-	// 			array( 'core/list', array(
-	// 				'style' => array(
-	// 					'list-style-type' => 'auto',
-	// 				)
-	// 			) ),
-	// 		) ),
+		'labels'        => $labels,
+		'public'        => true,
+		'menu_position' => 5,
+		'rewrite'       => array( 'slug' => 'teachers' ),
+		'capability_type'=> 'post',
+		'supports'      => array( 'title', 'editor', 'thumbnail' ),
+		'has_archive'   => true,
+		'hierarchical'  => false,
+		'show_in_rest'  => true,
+
+		'template' =>array(
+			array( 'core/image', array(
+				'align' => 'left'
+			) ),
+			array( 'core/group', array(), array(
+				array( 'core/group', array(), array(
+					array( 'core/paragraph', array(
+						'placeholder' => 'ФІО та посада викладача'
+					) ),
+				) ),
+				array( 'core/group', array(), array(
+					array( 'core/paragraph', array(
+						'placeholder' => 'Коротка інформація про викладача '
+					) ),
+				) ),
+			) ),
 			
+			array( 'core/group', array(), array(
+				array( 'core/group', array(), array(
+					array( 'core/paragraph', array(
+						'content' => 'Сторінка викладача'
+					) ),
+				) ),
+				array( 'core/group', array(), array(
+					array( 'core/paragraph', array(
+						'content' => 'Розклад викладача',
+						'link' => '#'
+					) ),
+				) ),
+			) ),
+			array( 'core/group', array(), array(
+				array( 'core/group', array(), array(
+					array( 'core/paragraph', array(
+						'content' => 'Основні публікації:'
+					) ),
+				) ),
+				array( 'core/group', array(), array(
+					array( 'core/list', array(
+						"ordered"=>true
+					) ),
+				) ),
+			) ),
 			
-		// )
+		)
 	);
 	register_post_type( 'teacher', $args ); 
   }
