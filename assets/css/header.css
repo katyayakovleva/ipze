@@ -55,10 +55,6 @@ body {
     transition: 0.2s all;
 }
 .container {
-    /*width: 100%;*/
-    /*max-width: 1170px;*/
-    /*padding: 0 0px;*/
-    /*margin: 0 auto;*/
      padding-right: 15px;
      padding-left: 15px;
      margin-right: auto;
@@ -95,7 +91,6 @@ body {
 .fab{
     display: inline-block;
     font: normal normal normal 14px/1 FontAwesome;
-    font-size: inherit;
     color: #47356C;
     text-rendering: auto;
     -webkit-font-smoothing: antialiased;
@@ -140,13 +135,13 @@ body {
     }
     .head_menu{
         /*padding-top: 40px;*/
-        margin-top: 0px;
+        margin-top: 0;
         display: block;
     }
     .head_menu ul > li {
         display: inline-block;
         position: relative;
-        margin-right: 0px;
+        margin-right: 0;
     }
     .head_menu ul ul li{
         display: block;
@@ -217,7 +212,7 @@ body {
 }
 @media (max-width: 1200px) {
     .menu_back{
-        padding-left: 0px;
+        padding-left: 0;
         padding-right: 0;
     }
     .head_menu ul > li > a {
@@ -283,7 +278,6 @@ body {
     .header_burger span{
         position: absolute;
         background-color: #47356C;
-        position: absolute;
         left: 0;
         width: 100%;
         height: 2px;
