@@ -36,12 +36,14 @@
         <div class="container">
             <div class="row logo-row">
                 <div class="col-sm-12">
-                    <div>
+                    <div class="">
                         <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" class="logo">
                             <img src="<?php echo get_template_directory_uri(); ?>/assets/img/ipze_logo.svg" alt="ІПЗЕ">
                         </a>
                     </div>
-
+                    <div class="dep_name">
+                        Кафедра інженерії програмного <br>забезпечення в енергетиці
+                    </div>
                     <div class="lans">
                         <span class="lans-text">
                             <a href="" class="">Укр.</a>
