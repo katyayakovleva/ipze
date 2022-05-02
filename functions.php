@@ -266,7 +266,12 @@ function get_breadcrumb() {
 			$category_link = get_category_link( $category_id );
 			echo '<a href="'.esc_url( $category_link ).'" rel="nofollow">Наукові заходи</a>';
 		}else{
-			echo '<a href="'.home_url().'" rel="nofollow">Головна</a>';
+			if(url_end_with_en(get_page_url())){
+				echo '<a href="'.home_url('/en/').'" rel="nofollow">Main</a>';
+			}else{
+				echo '<a href="'.home_url('/').'" rel="nofollow">Головна</a>';
+			}
+			
 		}
     } 
 	elseif (is_page()) {
@@ -281,13 +286,21 @@ function get_breadcrumb() {
 			echo get_the_title($parent_id);
 			echo '</a>';
 		}else{
-			echo '<a href="'.home_url().'" rel="nofollow">Головна</a>';
+			if(url_end_with_en(get_page_url())){
+				echo '<a href="'.home_url('/en/').'" rel="nofollow">Main</a>';
+			}else{
+				echo '<a href="'.home_url('/').'" rel="nofollow">Головна</a>';
+			}	
 		}
-		
-		
-		
-    } 
 	
+    } 
+	else{
+		if(url_end_with_en(get_page_url())){
+			echo '<a href="'.home_url('/en/').'" rel="nofollow">Main</a>';
+		}else{
+			echo '<a href="'.home_url('/').'" rel="nofollow">Головна</a>';
+		}	
+	}
 	// elseif (is_search()) {
     //     echo " > Search Results for... ";
     //     echo '"<em>';
@@ -407,17 +420,73 @@ function url_end_with_en($page_url){
 		return false;
 	}
 }
-function change_page_language($language){
+
+function to_ukranian(){
 	$page_url = get_page_url();
-	if($language == "ukr" && url_end_with_en($page_url)){
-		return substr($page_url, 0, -3);
+	$page_url_return = $page_url;
+	if(url_end_with_en($page_url)){
+		$page_url_return = substr($page_url_return, 0, -3);
+		
+		if(url_to_postid($page_url_return) != 0){
+
+			return $page_url_return;
+		}
+		else{
+			return $page_url;
+		}
+	}else{
+		return $page_url_return;
 	}
-	elseif($language == "en" && !url_end_with_en($page_url)){
-		$page_url .= "en/";
-		return $page_url;
+}
+function to_english(){
+	$page_url = get_page_url();
+	
+	$page_url_return = $page_url;
+	if(!url_end_with_en($page_url)){
+		$page_url_return .= "en/";
+		if(url_to_postid($page_url_return) != 0){
+			return $page_url_return;
+		}
+		else{
+			return $page_url;
+		}
 	}
 	else{
-		return $page_url;
+		return $page_url_return;
 	}
-	
 }
+function ipze_change_search_url() {
+    if ( is_search() && ! empty( $_GET['s'] ) ) {
+        wp_redirect( home_url( "/search/" ) . urlencode( get_query_var( 's' ) ) );
+        exit();
+    }   
+}
+add_action( 'template_redirect', 'ipze_change_search_url' );
+function ipze_search_by_title_only( $search, $wp_query )
+{
+    global $wpdb;
+ 
+    if ( empty( $search ) )
+        return $search; // skip processing - no search term in query
+ 
+    $q = $wp_query->query_vars;    
+    $n = ! empty( $q['exact'] ) ? '' : '%';
+ 
+    $search =
+    $searchand = '';
+ 
+    foreach ( (array) $q['search_terms'] as $term ) {
+        $term = esc_sql( like_escape( $term ) );
+        $search .= "{$searchand}($wpdb->posts.post_title LIKE '{$n}{$term}{$n}')";
+        $searchand = ' AND ';
+    }
+ 
+    if ( ! empty( $search ) ) {
+        $search = " AND ({$search}) ";
+        if ( ! is_user_logged_in() )
+            $search .= " AND ($wpdb->posts.post_password = '') ";
+    }
+ 
+    return $search;
+}
+add_filter( 'posts_search', 'ipze_search_by_title_only', 500, 2 );

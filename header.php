@@ -29,10 +29,7 @@
 </head>
 
 <body <?php body_class(); ?>>
-<?php wp_body_open();
-
-
-?>
+<?php wp_body_open();?>
 <!--<div id="page" class="site">-->
 <!--	<a class="skip-link screen-reader-text" href="#primary">--><?php //esc_html_e( 'Skip to content', 'ipze' ); ?><!--</a>-->
     <header>
@@ -45,14 +42,17 @@
                         </a>
                     </div>
                     <div class="dep_name">
-                        Кафедра <b>і</b>нженерії <b>п</b>рограмного <br><b>з</b>абезпечення в <b>е</b>нергетиці
+                        <?php
+                            echo language_variants("Кафедра <b>і</b>нженерії <b>п</b>рограмного <br><b>з</b>абезпечення в <b>е</b>нергетиці", "Kafedra <b>і</b>нженерії <b>п</b>рограмного <br><b>з</b>абезпечення в <b>е</b>нергетиці")
+                        ?>
+                        <!-- Кафедра <b>і</b>нженерії <b>п</b>рограмного <br><b>з</b>абезпечення в <b>е</b>нергетиці -->
                     </div>
                   
                     <div class="lans">
                         <span class="lans-text">
-                            <a href= "<?php echo change_page_language("ukr");?>" class="">Укр.</a>
+                            <a href= "<?php echo to_ukranian();?>" class="">Укр.</a>
                             <span class="stick">|</span>
-                            <a href= "<?php echo change_page_language("en"); ?>" class="">Eng.</a>
+                            <a href= "<?php echo to_english(); ?>" class="">Eng.</a>
                         </span>
                     </div>
                     <div id="header-burger"class="header_burger">
@@ -69,9 +69,9 @@
                     <nav id="site-navigation" class="head_menu">
                       
                         <span class="burger_lans lans-text">
-                            <a href= "<?php echo change_page_language("ukr");?>" class="">Укр.</a>
+                            <a href= "<?php echo to_ukranian();?>" class="">Укр.</a>
                             <span class="stick">|</span>
-                            <a href= "<?php echo change_page_language("en"); ?>" class="">Eng.</a>
+                            <a href= "<?php echo to_english(); ?>" class="">Eng.</a>
                         </span>
                         <!-- <button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'ipze' ); ?></button> -->
                         <?php
@@ -116,10 +116,8 @@
                     <input type="search" class="search-field" name="s" placeholder="Пошук..." value="<?php echo get_search_query(); ?>">
                 </form>
             </div>
-
            
         </div>
-    
         
         
     </header>

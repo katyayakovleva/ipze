@@ -16,14 +16,19 @@ get_header();
 				<div class="arrow-div">
 					<i class="arrow left"></i>
 				</div>
-				<a href="<?php home_url()?>" rel="nofollow">Головна</a>	
+				<?php get_breadcrumb(); ?>	
 			</div>
 			<h1 class="title"> Пошук </h1>
 		</section>
 		
 	<?php 
+
 		get_search_form();
+
 		if ( have_posts() ) : 
+			if(url_end_with_en(get_page_url())){
+
+			}
 			get_template_part( 'template-parts/content', 'search' );
 			the_posts_navigation();
 
