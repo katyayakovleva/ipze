@@ -52,6 +52,7 @@ function ipze_setup() {
 			'main-menu' => esc_html__( 'Primary', 'ipze' ),
 			'main-menu-eng' => esc_html__( 'Primary_English', 'ipze' ),
 			'footer-menu' => esc_html__( 'Footer', 'ipze' ),
+			'footer-menu-eng' => esc_html__( 'Footer_English', 'ipze' ),
 		)
 	);
 
@@ -386,30 +387,37 @@ function remove_category( $string, $type )  {
 }     
 add_filter( 'user_trailingslashit', 'remove_category', 100, 2);
 
-function language_variants($current_url, $ukranian, $english){
-	if (str_ends_with($current_url, 'en/')) {
+function language_variants( $ukranian, $english){
+	$page_url = get_page_url();
+	if (str_ends_with($page_url, 'en/')) {
 		return $english;
 	}else{
 		return $ukranian;
 	}
 }
-function change_page_language($current_url, $language){
-	// $obj_id = get_queried_object_id();
-	// $current_url = get_permalink($obj_id);
-	if($language == "ukr" && str_ends_with($current_url, 'en/')){
-		return substr($current_url, 0, -3);
+function get_page_url(){
+	$obj_id = get_queried_object_id();
+	$page_url = get_permalink($obj_id);
+	return $page_url;
+}
+function url_end_with_en($page_url){
+	if (str_ends_with($page_url, 'en/')) {
+		return true;
+	}else{
+		return false;
 	}
-	elseif($language == "ukr" && !str_ends_with($current_url, 'en/')){
-		return $current_url;
+}
+function change_page_language($language){
+	$page_url = get_page_url();
+	if($language == "ukr" && url_end_with_en($page_url)){
+		return substr($page_url, 0, -3);
 	}
-	elseif($language == "en" && !str_ends_with($current_url, 'en/')){
-		$current_url .= "en/";
-		return $current_url;
-
+	elseif($language == "en" && !url_end_with_en($page_url)){
+		$page_url .= "en/";
+		return $page_url;
 	}
-	elseif($language == "en" && str_ends_with($current_url, 'en/')){
-
-		return $current_url;
+	else{
+		return $page_url;
 	}
 	
 }

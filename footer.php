@@ -29,12 +29,22 @@
 			<div class=" col-md-6 col-lg-7 fmenu">
 				<nav id="footer-navigation" class="footer-menu">
 					<?php
+					if(url_end_with_en(get_page_url())){
+						wp_nav_menu(
+							array(
+								'theme_location' => 'footer-menu-eng',
+								'menu_id'        => 'footer-menu-eng',
+							)
+						);
+					}
+					else{
 						wp_nav_menu(
 							array(
 								'theme_location' => 'footer-menu',
 								'menu_id'        => 'footer-menu',
 							)
 						);
+					}	
 					?>
 				</nav><!-- #site-navigation -->
 				<div class="sys-in">
@@ -49,7 +59,7 @@
 			</div>
 		</div>
 
-		<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" class="flogo"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/ipze_logo_footer.svg"></a>
+		<a href="<?php echo language_variants(home_url( '/' ), home_url( '/en/' )); ?>" rel="home" class="flogo"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/ipze_logo_footer.svg"></a>
 
 		</div>
 	</footer><!-- #colophon -->

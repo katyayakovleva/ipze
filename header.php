@@ -30,8 +30,8 @@
 
 <body <?php body_class(); ?>>
 <?php wp_body_open();
-    $obj_id = get_queried_object_id();
-	$current_url = get_permalink($obj_id);
+
+
 ?>
 <!--<div id="page" class="site">-->
 <!--	<a class="skip-link screen-reader-text" href="#primary">--><?php //esc_html_e( 'Skip to content', 'ipze' ); ?><!--</a>-->
@@ -40,7 +40,7 @@
             <div class="row logo-row">
                 <div class="col-sm-12">
                     <div class="">
-                        <a href="<?php echo language_variants($current_url, home_url( '/' ), home_url( '/en/' )); ?>" rel="home" class="logo">
+                        <a href="<?php echo language_variants(home_url( '/' ), home_url( '/en/' )); ?>" rel="home" class="logo">
                             <img src="<?php echo get_template_directory_uri(); ?>/assets/img/ipze_logo.svg" alt="ІПЗЕ">
                         </a>
                     </div>
@@ -50,9 +50,9 @@
                   
                     <div class="lans">
                         <span class="lans-text">
-                            <a href= "<?php echo change_page_language($current_url,"ukr");?>" class="">Укр.</a>
+                            <a href= "<?php echo change_page_language("ukr");?>" class="">Укр.</a>
                             <span class="stick">|</span>
-                            <a href= "<?php echo change_page_language($current_url,"en"); ?>" class="">Eng.</a>
+                            <a href= "<?php echo change_page_language("en"); ?>" class="">Eng.</a>
                         </span>
                     </div>
                     <div id="header-burger"class="header_burger">
@@ -69,13 +69,13 @@
                     <nav id="site-navigation" class="head_menu">
                       
                         <span class="burger_lans lans-text">
-                            <a href= "<?php echo change_page_language($current_url,"ukr");?>" class="">Укр.</a>
+                            <a href= "<?php echo change_page_language("ukr");?>" class="">Укр.</a>
                             <span class="stick">|</span>
-                            <a href= "<?php echo change_page_language($current_url,"en"); ?>" class="">Eng.</a>
+                            <a href= "<?php echo change_page_language("en"); ?>" class="">Eng.</a>
                         </span>
                         <!-- <button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'ipze' ); ?></button> -->
                         <?php
-                        if(str_ends_with($current_url, 'en/')){
+                        if(url_end_with_en(get_page_url())){
                             wp_nav_menu(
                                 array(
                                     'theme_location' => 'main-menu-eng',
