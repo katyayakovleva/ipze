@@ -50,6 +50,7 @@ function ipze_setup() {
 	register_nav_menus(
 		array(
 			'main-menu' => esc_html__( 'Primary', 'ipze' ),
+			'main-menu-eng' => esc_html__( 'Primary_English', 'ipze' ),
 			'footer-menu' => esc_html__( 'Footer', 'ipze' ),
 		)
 	);
@@ -366,6 +367,13 @@ function ipze_teacher_post_type() {
 		)
 	);
 	register_post_type( 'teacher', $args ); 
+	register_taxonomy( 'categories', array('teacher'), array(
+        'hierarchical' => true, 
+        'label' => 'Categories', 
+        'singular_label' => 'Category', 
+        'rewrite' => array( 'slug' => 'categories', 'with_front'=> false )
+        )
+    );
   }
   add_action( 'init', 'ipze_teacher_post_type' );
 
@@ -378,3 +386,30 @@ function remove_category( $string, $type )  {
 }     
 add_filter( 'user_trailingslashit', 'remove_category', 100, 2);
 
+function language_variants($current_url, $ukranian, $english){
+	if (str_ends_with($current_url, 'en/')) {
+		return $english;
+	}else{
+		return $ukranian;
+	}
+}
+function change_page_language($current_url, $language){
+	// $obj_id = get_queried_object_id();
+	// $current_url = get_permalink($obj_id);
+	if($language == "ukr" && str_ends_with($current_url, 'en/')){
+		return substr($current_url, 0, -3);
+	}
+	elseif($language == "ukr" && !str_ends_with($current_url, 'en/')){
+		return $current_url;
+	}
+	elseif($language == "en" && !str_ends_with($current_url, 'en/')){
+		$current_url .= "en/";
+		return $current_url;
+
+	}
+	elseif($language == "en" && str_ends_with($current_url, 'en/')){
+
+		return $current_url;
+	}
+	
+}

@@ -21,7 +21,6 @@ get_header();
                 <div class="container">
                     <h2>
                         Навчаємо програмувати
-
                     </h2>
                 </div>
             </div>

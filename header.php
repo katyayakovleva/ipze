@@ -11,7 +11,7 @@
 
 ?>
 <!doctype html>
-<html <?php language_attributes(); ?>>
+<html>
 <head>
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -29,7 +29,10 @@
 </head>
 
 <body <?php body_class(); ?>>
-<?php wp_body_open(); ?>
+<?php wp_body_open();
+    $obj_id = get_queried_object_id();
+	$current_url = get_permalink($obj_id);
+?>
 <!--<div id="page" class="site">-->
 <!--	<a class="skip-link screen-reader-text" href="#primary">--><?php //esc_html_e( 'Skip to content', 'ipze' ); ?><!--</a>-->
     <header>
@@ -37,18 +40,19 @@
             <div class="row logo-row">
                 <div class="col-sm-12">
                     <div class="">
-                        <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" class="logo">
+                        <a href="<?php echo language_variants($current_url, home_url( '/' ), home_url( '/en/' )); ?>" rel="home" class="logo">
                             <img src="<?php echo get_template_directory_uri(); ?>/assets/img/ipze_logo.svg" alt="ІПЗЕ">
                         </a>
                     </div>
                     <div class="dep_name">
                         Кафедра <b>і</b>нженерії <b>п</b>рограмного <br><b>з</b>абезпечення в <b>е</b>нергетиці
                     </div>
+                  
                     <div class="lans">
                         <span class="lans-text">
-                            <a href="" class="">Укр.</a>
+                            <a href= "<?php echo change_page_language($current_url,"ukr");?>" class="">Укр.</a>
                             <span class="stick">|</span>
-                            <a href="" class="">Eng.</a>
+                            <a href= "<?php echo change_page_language($current_url,"en"); ?>" class="">Eng.</a>
                         </span>
                     </div>
                     <div id="header-burger"class="header_burger">
@@ -63,20 +67,33 @@
 <!--                </div>-->
                 <div class="col-md-11 menu_back">
                     <nav id="site-navigation" class="head_menu">
+                      
                         <span class="burger_lans lans-text">
-                            <a href="" class="">Укр.</a>
+                            <a href= "<?php echo change_page_language($current_url,"ukr");?>" class="">Укр.</a>
                             <span class="stick">|</span>
-                            <a href="" class="">Eng.</a>
+                            <a href= "<?php echo change_page_language($current_url,"en"); ?>" class="">Eng.</a>
                         </span>
                         <!-- <button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'ipze' ); ?></button> -->
                         <?php
-                        wp_nav_menu(
-                            array(
-                                'theme_location' => 'main-menu',
-                                'menu_id'        => 'primary-menu',
-                                'depth'          => '3'
-                            )
-                        );
+                        if(str_ends_with($current_url, 'en/')){
+                            wp_nav_menu(
+                                array(
+                                    'theme_location' => 'main-menu-eng',
+                                    'menu_id'        => 'primary-menu-eng',
+                                    'depth'          => '3'
+                                )
+                            );
+                        }
+                        else{
+                            wp_nav_menu(
+                                array(
+                                    'theme_location' => 'main-menu',
+                                    'menu_id'        => 'primary-menu',
+                                    'depth'          => '3'
+                                )
+                            );
+                        }
+                        
                         ?>
                         <div class="burger_soc-menu">
                             <i id="search-icon-burger" class="fa fa-search"></i> 
@@ -102,6 +119,8 @@
 
            
         </div>
+    
+        
         
     </header>
 
