@@ -462,6 +462,7 @@ function ipze_change_search_url() {
     }   
 }
 add_action( 'template_redirect', 'ipze_change_search_url' );
+
 function ipze_search_by_title_only( $search, $wp_query )
 {
     global $wpdb;

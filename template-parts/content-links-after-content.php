@@ -10,7 +10,7 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	
-
+	<div class="">
         <?php 
             $args = array(
                 'parent' => $post->ID,
@@ -18,11 +18,13 @@
                 'post_status' => 'publish',
                 'sort_column' => 'menu_order'
             ); 
-            $pages = get_pages($args);      
+            $pages = get_pages($args);  
+             
+            // if ( $pages->have_posts() ) : 
         ?>
-        <!-- <div class="container"> -->
-            <div class="row items">
-                <?php foreach( $pages as $post) : ?>
+        <div style="margin-top:45px;">
+            <div class="items row">
+                <?php foreach( $pages as $post):?>
                     <div class="item-wrapper col-sm-6 col-md-4">
                         <div class="post-in-list" >
                             <?php if ( has_post_thumbnail() ) : ?>
@@ -37,12 +39,12 @@
                             </a>
                         </div>
                     </div>
-                <?php endforeach;
-                wp_reset_postdata(); ?>
+                <?php endforeach; ?>
             </div>
-        <!-- </div> -->
+        </div>
+        <?php  wp_reset_postdata(); ?>
 
-
+	</div><!-- .entry-content -->
 
 
 </article><!-- #post-<?php the_ID(); ?> -->

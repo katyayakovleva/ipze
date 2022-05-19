@@ -11,7 +11,7 @@
 
 ?>
 <!doctype html>
-<html>
+<html lang="ua">
 <head>
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -23,9 +23,7 @@
 
         }
     </style>
-    <?php wp_head(); ?>
-
-    
+    <?php wp_head(); ?>   
 </head>
 
 <body <?php body_class(); ?>>
@@ -47,13 +45,20 @@
                         ?>
                         <!-- Кафедра <b>і</b>нженерії <b>п</b>рограмного <br><b>з</b>абезпечення в <b>е</b>нергетиці -->
                     </div>
-                  
+                    <?php 
+                       if ( !empty($_GET['language']) ) {
+                        $_COOKIE['language'] = $_GET['language'] === 'ua' ? 'ua' : 'en';
+                    } else {
+                        $_COOKIE['language'] = 'en';
+                    }
+                    setcookie('language', $_COOKIE['language']);
+                    ?>
                     <div class="lans">
                         <span class="lans-text">
                             <a href= "<?php echo to_ukranian();?>" class="">Укр.</a>
                             <span class="stick">|</span>
                             <a href= "<?php echo to_english(); ?>" class="">Eng.</a>
-                        </span>
+                    </span>
                     </div>
                     <div id="header-burger"class="header_burger">
                         <span></span>
